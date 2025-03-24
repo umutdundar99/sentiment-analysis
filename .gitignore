@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# ipynb 
+*.ipynb linguist-detectable=false
+
+#lightning logs
+lightning_logs
