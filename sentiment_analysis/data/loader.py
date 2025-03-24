@@ -1,69 +1,51 @@
 import os
+
+import lightning as L
 import pandas as pd
-from torch.utils.data import Dataset
 import torch
-import tiktoken
-import pytorch_lightning as pl
-from typing import Optional
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
 
 
 class SentimentAnalysisDataset(Dataset):
-    """
-    Torch Dataset class for loading sentiment analysis samples from preprocessed conversation data.
-    Text is tokenized using GPT-2 tokenizer and padded/truncated to a uniform length.
-    """
-    def __init__(self, csv_path: str, max_length: int = 256):
-        """
-        Initializes the dataset from a preprocessed CSV file.
-
-        Args:
-            csv_path (str): File path to the processed CSV.
-            max_length (int): Maximum token length for model input.
-        """
+    def __init__(self, csv_path: str, max_length: int = 512):
         self.data = pd.read_csv(csv_path)
+        texts = self.data["text"].tolist()
+        self.labels = self.data["label"].tolist()
+
+        all_text = "".join(texts)
+        self.chars = sorted(list(set(all_text)))
+        self.stoi = {ch: i + 1 for i, ch in enumerate(self.chars)}
+        self.itos = {i + 1: ch for i, ch in enumerate(self.chars)}
         self.max_length = max_length
-        self.enc = tiktoken.get_encoding("gpt2")
-        self.label_map = {'negative': 0, 'neutral': 1, 'positive': 2}
-        self.data['label'] = self.data['customer_sentiment'].map(self.label_map)
+        self.vocab_size = len(self.stoi) + 1
 
-    def __len__(self) -> int:
-        """
-        Returns the number of examples in the dataset.
+    def encode(self, text):
+        encoded = [self.stoi.get(ch, 0) for ch in text]
+        if len(encoded) > self.max_length:
+            return encoded[: self.max_length]
+        else:
+            return encoded + [0] * (self.max_length - len(encoded))
 
-        Returns:
-            int: Dataset size.
-        """
+    def __len__(self):
         return len(self.data)
 
-    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor]:
-        """
-        Retrieves tokenized input tensor and target label tensor for a given index.
+    def __getitem__(self, idx):
+        text = self.data.iloc[idx]["text"]
+        label = self.labels[idx]
+        encoded_text = self.encode(text)
 
-        Args:
-            idx (int): Index of the sample.
-
-        Returns:
-            Tuple[torch.Tensor, torch.Tensor]: Tuple of input token tensor and sentiment class label tensor.
-        """
-        conversation = self.data.iloc[idx]['conversation']
-        label = self.data.iloc[idx]['label']
-        token_ids = self.enc.encode_ordinary(conversation)
-        if len(token_ids) > self.max_length:
-            token_ids = token_ids[:self.max_length]
-        else:
-            token_ids += [0] * (self.max_length - len(token_ids))
-        input_tensor = torch.tensor(token_ids, dtype=torch.long)
+        input_tensor = torch.tensor(encoded_text, dtype=torch.long)
         label_tensor = torch.tensor(label, dtype=torch.long)
+
         return input_tensor, label_tensor
 
 
-class SentimentAnalysisDataModule(pl.LightningDataModule):
+class SentimentAnalysisDataModule(L.LightningDataModule):
     """
     PyTorch Lightning DataModule class for loading
     """
-    
-    def __init__(self, data_dir:str, batch_size:int=32):
+
+    def __init__(self, data_dir: str, batch_size: int = 32):
         """
         Initializes the DataModule by setting the data directory and batch size.
 
@@ -74,18 +56,10 @@ class SentimentAnalysisDataModule(pl.LightningDataModule):
         super().__init__()
         self.data_dir = data_dir
         self.batch_size = batch_size
-        
-    def setup(self, stage: Optional[str] = None):
-        """
-        Loads the training and validation datasets from CSV files.
+        self.train = SentimentAnalysisDataset(os.path.join(self.data_dir, "train.csv"))
+        self.val = SentimentAnalysisDataset(os.path.join(self.data_dir, "val.csv"))
+        self.test = SentimentAnalysisDataset(os.path.join(self.data_dir, "test.csv"))
 
-        Args:
-            stage (Optional[str]): Optional argument to distinguish between training and validation.
-        """
-        if stage == 'fit' or stage is None:
-            self.train = SentimentAnalysisDataset(os.path.join(self.data_dir, 'train.csv'))
-            self.val = SentimentAnalysisDataset(os.path.join(self.data_dir, 'val.csv'))
-            
     def train_dataloader(self):
         """
         Returns a DataLoader for the training dataset.
@@ -94,7 +68,7 @@ class SentimentAnalysisDataModule(pl.LightningDataModule):
             DataLoader: Training DataLoader.
         """
         return DataLoader(self.train, batch_size=self.batch_size, shuffle=True)
-    
+
     def val_dataloader(self):
         """
         Returns a DataLoader for the validation dataset.
@@ -103,5 +77,12 @@ class SentimentAnalysisDataModule(pl.LightningDataModule):
             DataLoader: Validation DataLoader.
         """
         return DataLoader(self.val, batch_size=self.batch_size)
-      
-        
+
+    def test_dataloader(self):
+        """
+        Returns a DataLoader for the validation dataset.
+
+        Returns:
+            DataLoader: Validation DataLoader.
+        """
+        return DataLoader(self.test, batch_size=self.batch_size)
