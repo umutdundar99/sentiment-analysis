@@ -13,4 +13,3 @@ dataset:
 model:
   name: gpt2
   ckpt: None
-  
