@@ -18,11 +18,14 @@ def preprocess_text(text: str) -> str:
     Returns:
         str: The cleaned and preprocessed text.
     """
-    text = re.sub(r"\b(Customer|Agent):\b", "", text, flags=re.IGNORECASE)
+
     text = text.lower()
+    text_splitted = text.split("\n\n")
+    text = [i for i in text_splitted if not i.startswith("agent")]
+    text = " ".join(text)
     text = re.sub(r"[^a-z0-9\s]", "", text)
     text = re.sub(r"\s+", " ", text).strip()
-    # text = " ".join([word for word in text.split() if word not in STOPWORDS])
+    text = text.replace("customer", "")
     return text
 
 
@@ -40,18 +43,10 @@ def process_data(
     Returns:
         pd.DataFrame: The processed data.
     """
-    data = data[KEEP_COLUMNS].dropna()
-    data["conversation"] = data["conversation"].apply(preprocess_text)
-    data["conversation"] = data["conversation"].apply(
-        lambda x: x.replace("customer", "")
-    )
-    data["conversation"] = data["conversation"].apply(lambda x: x.replace("agent", ""))
-    data = data[
-        ~data["conversation"]
-        .str.len()
-        .isin(data["conversation"].str.len().nlargest(int(len(data) * 0.05)).values)
-    ]
 
+    data["conversation"] = data["conversation"].apply(preprocess_text)
+    data = data[KEEP_COLUMNS].dropna()
+    data = data[data["conversation"].apply(lambda x: len(x.split()) > 10)]
     if val_split is not None:
         # Split the data into training and validation sets
         val_size = int(len(data) * val_split)

@@ -6,10 +6,11 @@ wandb:
 
 dataset:
   dir: /home/umutdundar/Desktop/repositories/sentiment-analysis/sentiment_analysis/data/processed
-  batch_size: 8
-  max_length: 128
-  num_workers: 4
+  batch_size: 4
+  max_length: 512
+  num_workers: 12
   num_classes: 3
+  encode_type: gpt2
 
 model:
   name: nanogpt
@@ -24,8 +25,8 @@ optimizer:
 
 
 trainer:
-  max_steps: 5000
+  max_steps: 25000
   precision: 16
   accelerator: auto
   accumulate_grad_batches: 1
-  device_type: cuda
+  device_type: cpu

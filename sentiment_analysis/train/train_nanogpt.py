@@ -17,10 +17,18 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
     datamodule = SentimentAnalysisDataModule(
         data_dir=cfg.dataset.dir,
         batch_size=cfg.dataset.batch_size,
+        max_length=cfg.dataset.max_length,
+        encode_type=cfg.dataset.encode_type,
     )
 
     model_config = nanoGPTConfig()
-    model = GPT(config=model_config, num_classes=cfg.dataset.num_classes)
+    model = GPT(
+        config=model_config,
+        num_classes=cfg.dataset.num_classes,
+        vocab_size=datamodule.train.vocab_size
+        if cfg.dataset.encode_type == "char"
+        else None,
+    )
     criterion = CrossEntropyLoss()
     module = GPTLightningModule(
         model=model,
@@ -52,5 +60,6 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
         accelerator=cfg.trainer.accelerator,
         callbacks=callbacks,
         accumulate_grad_batches=cfg.trainer.accumulate_grad_batches,
+        log_every_n_steps=50,
     )
     trainer.fit(module, datamodule)

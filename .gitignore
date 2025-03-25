@@ -173,7 +173,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# ipynb 
+# ipynb
 *.ipynb linguist-detectable=false
 
 #lightning logs

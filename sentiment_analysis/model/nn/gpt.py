@@ -1,40 +1,47 @@
 import math
-import torch.nn as nn
-import torch
-import torch.nn.functional as F
+from typing import Any, Dict, Optional
 
-from sentiment_analysis.model.nn.blocks import LayerNorm, Block
+import torch
+import torch.nn as nn
+
+from sentiment_analysis.model.nn.blocks import Block, LayerNorm
 
 
 class GPT(nn.Module):
-    def __init__(self, config, num_classes):
+    def __init__(
+        self, config: Dict[str, Any], num_classes: int, vocab_size: Optional[int] = None
+    ):
         super().__init__()
         assert config.vocab_size is not None
         assert config.block_size is not None
+
+        config.vocab_size = vocab_size if vocab_size is not None else config.vocab_size
         self.config = config
 
-        
-        self.transformer = nn.ModuleDict(dict(
-            wte=nn.Embedding(config.vocab_size, config.n_embd),
-            wpe=nn.Embedding(config.block_size, config.n_embd),
-            drop=nn.Dropout(config.dropout),
-            h=nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
-            ln_f=LayerNorm(config.n_embd, bias=config.bias),
-        ))
+        self.transformer = nn.ModuleDict(
+            dict(
+                wte=nn.Embedding(config.vocab_size, config.n_embd),
+                wpe=nn.Embedding(config.block_size, config.n_embd),
+                drop=nn.Dropout(config.dropout),
+                h=nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
+                ln_f=LayerNorm(config.n_embd, bias=config.bias),
+            )
+        )
 
-        
         self.classifier_head = nn.Sequential(
             nn.Linear(config.n_embd, config.n_embd // 2),
             nn.ReLU(),
             nn.Dropout(config.dropout),
-            nn.Linear(config.n_embd // 2, num_classes)
+            nn.Linear(config.n_embd // 2, num_classes),
         )
 
         # Weight initialization
         self.apply(self._init_weights)
         for pn, p in self.named_parameters():
-            if pn.endswith('c_proj.weight'):
-                torch.nn.init.normal_(p, mean=0.0, std=0.02 / math.sqrt(2 * config.n_layer))
+            if pn.endswith("c_proj.weight"):
+                torch.nn.init.normal_(
+                    p, mean=0.0, std=0.02 / math.sqrt(2 * config.n_layer)
+                )
 
         print("number of parameters: %.2fM" % (self.get_num_params() / 1e6,))
 
@@ -55,8 +62,9 @@ class GPT(nn.Module):
     def forward(self, idx, targets=None):
         device = idx.device
         b, t = idx.size()
-        assert t <= self.config.block_size, \
-            f"Cannot forward sequence of length {t}, block size is only {self.config.block_size}"
+        assert (
+            t <= self.config.block_size
+        ), f"Cannot forward sequence of length {t}, block size is only {self.config.block_size}"
         pos = torch.arange(0, t, dtype=torch.long, device=device)
 
         # Transformer forward
@@ -73,8 +81,4 @@ class GPT(nn.Module):
         # Classification logits
         logits = self.classifier_head(pooled_x)  # (b, num_classes)
 
-        loss = None
-        if targets is not None:
-            loss = F.cross_entropy(logits, targets)
-
-        return logits, loss
+        return logits
