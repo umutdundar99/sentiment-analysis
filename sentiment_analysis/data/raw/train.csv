@@ -180,17 +180,17 @@ Customer: Thank you, David. You too.
 Specialist: Thank you, sir. Goodbye!"
 Login and Account,Account Reactivation and Deactivation,Reactivating an inactive account,Account Reactivation and Deactivation -> Reactivating an inactive account,negative,Appliances,Wet Grinder,medium,junior,"handles customer inquiries independently, possess solid troubleshooting skills, and seek guidance from more experienced team members when needed.","Agent: Thank you for calling BrownBox customer support. My name is Alex. How can I assist you today?
 
-Customer: Hi Alex. I'm trying to reactivate my account to purchase a Wet Grinder, but it's not letting me log in. 
+Customer: Hi Alex. I'm trying to reactivate my account to purchase a Wet Grinder, but it's not letting me log in.
 
 Agent: I'm sorry to hear that. May I have your email address and phone number associated with the account, please?
 
 Customer: Sure, my email address is johnsmith@email.com, and my phone number is 123-456-7890.
 
-Agent: Thank you for verifying your account details, John. Let me check your account information. It looks like your account has been inactive for more than six months, which is why it has been deactivated. 
+Agent: Thank you for verifying your account details, John. Let me check your account information. It looks like your account has been inactive for more than six months, which is why it has been deactivated.
 
 Customer: What? Why was it deactivated? I never received any notification about it.
 
-Agent: I'm sorry for the inconvenience, John. Our system automatically deactivates accounts if there is no activity for six months. However, we can reactivate your account for you now. 
+Agent: I'm sorry for the inconvenience, John. Our system automatically deactivates accounts if there is no activity for six months. However, we can reactivate your account for you now.
 
 Customer: Okay, please do that. I need to purchase the Wet Grinder urgently.
 
@@ -227,7 +227,7 @@ Agent: Thank you for the information. May I know the reason for the return?
 
 Customer: As I mentioned earlier, the product is not working correctly. I want to return it and get a refund.
 
-Agent: I'm sorry for the inconvenience. We would be happy to process your return and refund. However, since you have opted for Cash on Delivery, it will take some time to process your refund. Our refund timelines for Cash on Delivery returns are usually within 7-14 business days from the date of pickup. 
+Agent: I'm sorry for the inconvenience. We would be happy to process your return and refund. However, since you have opted for Cash on Delivery, it will take some time to process your refund. Our refund timelines for Cash on Delivery returns are usually within 7-14 business days from the date of pickup.
 
 Customer: What? That's too long. Why does it take so much time?
 
@@ -235,7 +235,7 @@ Agent: I understand your frustration, but the refund process takes time as we ha
 
 Customer: This is unacceptable. I need the refund immediately. Can't you do anything about it?
 
-Agent: I'm sorry, but we cannot expedite the refund process. However, I can assure you that we will process your refund as soon as possible. 
+Agent: I'm sorry, but we cannot expedite the refund process. However, I can assure you that we will process your refund as soon as possible.
 
 Customer: Can you at least tell me the status of my refund?
 
@@ -247,13 +247,13 @@ Agent: Thank you for waiting. I have checked your refund status, and I see that 
 
 Customer: Alright, I understand. Is there anything else I need to do?
 
-Agent: No, you don't have to do anything else. Our team will process your refund, and you will receive an email confirmation once it's done. 
+Agent: No, you don't have to do anything else. Our team will process your refund, and you will receive an email confirmation once it's done.
 
 Customer: Okay, thank you for your help.
 
 Agent: You're welcome. I apologize for the inconvenience caused. Is there anything else I can assist you with?
 
-Customer: No, that's all. 
+Customer: No, that's all.
 
 Agent: Alright, please feel free to contact us if you have any further questions or concerns. Have a great day!
 
@@ -561,7 +561,7 @@ Customer: Sure, it's BB987654321.
 
 Agent: Thank you for that. I can see that you purchased the Wet Grinder on July 15th, 2021. The warranty for this product starts on the date of purchase, which is July 15th, 2021.
 
-Customer: Okay, thank you for letting me know. I just wanted to make sure I had the right information. 
+Customer: Okay, thank you for letting me know. I just wanted to make sure I had the right information.
 
 Agent: You're welcome! Is there anything else I can assist you with today?
 
@@ -3821,7 +3821,7 @@ Agent: Thank you. Let me check the details for you. Please bear with me for a mo
 
 [Agent puts the customer on hold briefly to look up the information]
 
-Agent: Thank you for your patience. I have checked the details, and I see that we require mobile number and email verification for account login for the Induction Cooktop. This is to ensure the security of your account and to prevent unauthorized access. 
+Agent: Thank you for your patience. I have checked the details, and I see that we require mobile number and email verification for account login for the Induction Cooktop. This is to ensure the security of your account and to prevent unauthorized access.
 
 Customer: Okay, I understand. How do I verify my mobile number and email address?
 
@@ -4958,7 +4958,7 @@ Customer: That's good to hear, Alex. But I have lost the warranty card, and I am
 
 Agent: I understand your concern, sir. However, you don't have to worry about the warranty card. We have your purchase details on record, and we can verify the warranty period based on that.
 
-Customer: That's a relief, Alex. Thank you for your assistance. 
+Customer: That's a relief, Alex. Thank you for your assistance.
 
 Agent: You're welcome, sir. Is there anything else I can assist you with?
 
@@ -6923,7 +6923,7 @@ Agent: Sure, John. We will arrange for a pickup of the defective printer and del
 
 Customer: No, I don't have the original packaging.
 
-Agent: That's okay, John. We will arrange for the packaging as well. Please allow me a moment to initiate the process. 
+Agent: That's okay, John. We will arrange for the packaging as well. Please allow me a moment to initiate the process.
 
 (Customer is put on hold for a minute.)
 
@@ -8346,7 +8346,7 @@ Customer: Fine, whatever. Just let me know when my package will arrive.
 
 Agent: Absolutely, John. I'll keep an eye on it and follow up with you as soon as I have an update. Thank you for your patience, and I'm sorry again for the inconvenience.
 
-Customer: Whatever. *click* 
+Customer: Whatever. *click*
 
 Agent: I'm sorry again for the delay, John. If you have any further questions or concerns, please don't hesitate to contact us. Have a good day."
 Cancellations and returns,Replacement and Return Process,Inability to click the 'Cancel' button,Replacement and Return Process -> Inability to click the 'Cancel' button,neutral,Appliances,Air Cooler,less,junior,"handles customer inquiries independently, possess solid troubleshooting skills, and seek guidance from more experienced team members when needed.","Agent: Thank you for calling BrownBox Customer Support. My name is Alex. How may I assist you today?
@@ -8361,7 +8361,7 @@ Agent: Thank you for providing the order number. Let me check the status of your
 
 [Agent puts the customer on hold for a minute]
 
-Agent: Thank you for waiting. I have checked the status of your order, and I can confirm that it's eligible for return and replacement. We'll be happy to assist you with that. 
+Agent: Thank you for waiting. I have checked the status of your order, and I can confirm that it's eligible for return and replacement. We'll be happy to assist you with that.
 
 Customer: Great, thank you. But, I'm unable to click the 'Cancel' button for the air cooler on my account page. Can you help me with that?
 
@@ -9758,7 +9758,7 @@ Agent: Sure, I can help you with that. May I have your order number, please?
 
 Customer: Yes, it's BB789012.
 
-Agent: Thank you, let me check that for you. It looks like the Induction Cooktop you ordered is a large item that requires special handling during shipping. Due to the size and weight, it's difficult for our delivery partners to carry it up to your apartment or home without causing damage to the item or your property. Therefore, we are asking you to ship the item to your address using our partnered shipping service. 
+Agent: Thank you, let me check that for you. It looks like the Induction Cooktop you ordered is a large item that requires special handling during shipping. Due to the size and weight, it's difficult for our delivery partners to carry it up to your apartment or home without causing damage to the item or your property. Therefore, we are asking you to ship the item to your address using our partnered shipping service.
 
 Customer: Oh, I see. That makes sense. How do I go about shipping it?
 
@@ -11076,7 +11076,7 @@ Agent: Thank you for providing that information, sir. Let me check the availabil
 
 (Customer is put on hold for a minute)
 
-Agent: Thank you for waiting, sir. I have checked the availability of the Wet Grinder, and I'm glad to inform you that we have it in stock. We can initiate a return and exchange process for you. You can keep the Mixer Grinder you received as a gesture of goodwill from our side. 
+Agent: Thank you for waiting, sir. I have checked the availability of the Wet Grinder, and I'm glad to inform you that we have it in stock. We can initiate a return and exchange process for you. You can keep the Mixer Grinder you received as a gesture of goodwill from our side.
 
 Customer: That sounds good, Rachel. How do I proceed with the return and exchange process?
 
@@ -12267,7 +12267,7 @@ Agent: You're welcome, sir. Is there anything else I can help you with?
 Customer: No, that's all for now. Thank you again.
 
 Agent: You're welcome, sir. Have a great day."
-Cancellations and returns,Return and Exchange,Return Shipping/Pickup Issues,Return and Exchange -> Return Shipping/Pickup Issues,negative,Appliances,Water Purifier,less,junior,"handles customer inquiries independently, possess solid troubleshooting skills, and seek guidance from more experienced team members when needed.","Customer: Hi, I need to talk to someone about a return I made for a water purifier. I was supposed to receive a refund, but I haven't received anything yet. 
+Cancellations and returns,Return and Exchange,Return Shipping/Pickup Issues,Return and Exchange -> Return Shipping/Pickup Issues,negative,Appliances,Water Purifier,less,junior,"handles customer inquiries independently, possess solid troubleshooting skills, and seek guidance from more experienced team members when needed.","Customer: Hi, I need to talk to someone about a return I made for a water purifier. I was supposed to receive a refund, but I haven't received anything yet.
 
 Agent: Hello, I'm sorry to hear that you're having trouble with your return. My name is Alex, and I'll be happy to assist you. May I have your order number and name, please?
 
@@ -13176,11 +13176,11 @@ Agent: Thank you for providing me with your order number. I see that your order 
 
 (Customer is on hold for a minute)
 
-Agent: Thank you for waiting, I have initiated the cancellation process for your order. However, please note that since your order is in processing, it is possible that it may have already been shipped. If that is the case, you may need to return the item once you receive it. 
+Agent: Thank you for waiting, I have initiated the cancellation process for your order. However, please note that since your order is in processing, it is possible that it may have already been shipped. If that is the case, you may need to return the item once you receive it.
 
 Customer: Okay, I understand. How long will it take for the cancellation to be processed?
 
-Agent: It usually takes 24-48 hours to process the cancellation. You will receive an email confirmation once the cancellation is complete. 
+Agent: It usually takes 24-48 hours to process the cancellation. You will receive an email confirmation once the cancellation is complete.
 
 Customer: Alright, thank you for your help.
 
@@ -13885,7 +13885,7 @@ Agent: Thank you for providing that information. Let me check your order details
 
 (Customer is put on hold for a minute)
 
-Agent: Thank you for waiting. I have checked your order details, and I can see that your order is eligible for a return and replacement. You can return the shorts within 30 days of the delivery date, and we will ship the replacement pair to you as soon as we receive the returned item. 
+Agent: Thank you for waiting. I have checked your order details, and I can see that your order is eligible for a return and replacement. You can return the shorts within 30 days of the delivery date, and we will ship the replacement pair to you as soon as we receive the returned item.
 
 Customer: Okay, that sounds good. How long will it take for me to receive the replacement shorts?
 
@@ -15591,7 +15591,7 @@ Agent: I'm sorry to hear that your product arrived damaged. Let me help you with
 
 Customer: Sure, it's #123456.
 
-Agent: Thank you. I can see that you ordered a Kitchen Chimney worth $200 and paid for it using the CoD option. To initiate the refund process, we need to first receive the product back at our warehouse. After that, we will process the refund within three to five business days. 
+Agent: Thank you. I can see that you ordered a Kitchen Chimney worth $200 and paid for it using the CoD option. To initiate the refund process, we need to first receive the product back at our warehouse. After that, we will process the refund within three to five business days.
 
 Customer: Okay, that sounds good. How do I return the product?
 
@@ -15906,7 +15906,7 @@ Agent: Sure, Emily. I'd be happy to help you with that. Can you please provide m
 
 Customer: Yes, my order number is BB123456789.
 
-Agent: Thank you, Emily. Let me check the status of your order. 
+Agent: Thank you, Emily. Let me check the status of your order.
 
 [Agent puts the customer on hold briefly to investigate the issue]
 
@@ -16564,7 +16564,7 @@ Agent: Sure, I'd be happy to help you with that. Can I have your order number, p
 
 Customer: Yes, the order number is 987654.
 
-Agent: Thank you for providing that information. Let me check the details for you. (After a brief hold) I can see that the headphone you ordered is priced at $20, and the minimum order value for free delivery is $25. 
+Agent: Thank you for providing that information. Let me check the details for you. (After a brief hold) I can see that the headphone you ordered is priced at $20, and the minimum order value for free delivery is $25.
 
 Customer: Oh, I see. So, if I had ordered something else with the headphone, I would have qualified for free delivery?
 
@@ -16816,19 +16816,19 @@ Agent: I'm sorry to hear that, sir. I'd be happy to assist you with that. May I 
 
 Customer: Sure, the order number is 123456, and the product is the XYZ speaker.
 
-Agent: Thank you for providing that information, sir. I'm sorry for the inconvenience caused. Let me check the details of your order. (puts customer on hold for a minute) I see that the product is eligible for a return and replacement. The return process usually takes 3-5 business days, and the replacement will be shipped once we receive the returned product. 
+Agent: Thank you for providing that information, sir. I'm sorry for the inconvenience caused. Let me check the details of your order. (puts customer on hold for a minute) I see that the product is eligible for a return and replacement. The return process usually takes 3-5 business days, and the replacement will be shipped once we receive the returned product.
 
 Customer: Okay, that sounds good. When can I expect to receive the replacement?
 
-Agent: Once we receive the returned product, it takes about 2-3 business days to process the replacement order and another 3-5 business days for the replacement to be delivered to your address. 
+Agent: Once we receive the returned product, it takes about 2-3 business days to process the replacement order and another 3-5 business days for the replacement to be delivered to your address.
 
 Customer: Alright, that’s a bit longer than I expected. Is there any way to expedite the process?
 
-Agent: I'm sorry, sir, but the time frame I provided is the standard procedure for a return and replacement. However, I can try to expedite the process by escalating your request to our senior team. 
+Agent: I'm sorry, sir, but the time frame I provided is the standard procedure for a return and replacement. However, I can try to expedite the process by escalating your request to our senior team.
 
 Customer: Yes, please do that. I need the speaker for an event next week.
 
-Agent: Sure, sir. I'll escalate your request to our senior team, and they will get back to you within 24 hours with an update on the status of your replacement. 
+Agent: Sure, sir. I'll escalate your request to our senior team, and they will get back to you within 24 hours with an update on the status of your replacement.
 
 Customer: Okay, thank you for your help, Alex.
 
@@ -17180,7 +17180,7 @@ Customer Support: Thank you, Lisa. I have updated your details in our system. Yo
 
 Customer: Okay, thank you for your help.
 
-Customer Support: You're welcome, Lisa. If you have any other questions or concerns, please feel free to contact us. Have a great day. 
+Customer Support: You're welcome, Lisa. If you have any other questions or concerns, please feel free to contact us. Have a great day.
 
 Customer: You too. Goodbye.
 
@@ -20381,7 +20381,7 @@ Agent: I'm sorry to hear that, may I have your order number so I can check the d
 
 Customer: Sure, my order number is BB123456789.
 
-Agent: Thank you, let me check. I see that you ordered baby food, and the reason you were asked to ship it is that it's a perishable item, and we want to ensure that it's delivered to you as soon as possible. 
+Agent: Thank you, let me check. I see that you ordered baby food, and the reason you were asked to ship it is that it's a perishable item, and we want to ensure that it's delivered to you as soon as possible.
 
 Customer: Oh, I see. But why wasn't it shipped directly to me?
 
@@ -21534,7 +21534,7 @@ Agent: Okay, please allow me a moment to check the return and refund timelines f
 
 (Customer is put on hold for a minute.)
 
-Agent: Thank you for waiting, Sarah. Our standard return and refund timeline is within 14 days of receiving the product. Since you received the product three days ago, you are well within the timeline. 
+Agent: Thank you for waiting, Sarah. Our standard return and refund timeline is within 14 days of receiving the product. Since you received the product three days ago, you are well within the timeline.
 
 Customer: That's great. How do I initiate the return process?
 
@@ -22832,7 +22832,7 @@ Customer: No, that's all for now.
 
 Agent: Okay. Once again, I apologize for the inconvenience caused, and I hope that we can resolve this issue to your satisfaction. If you have any further questions or concerns, please don't hesitate to contact us. Have a good day.
 
-Customer: Goodbye. 
+Customer: Goodbye.
 
 Agent: Goodbye."
 Cancellations and returns,Return Checks and Fees,Checks performed for returned items,Return Checks and Fees -> Checks performed for returned items,neutral,Electronics,Laptop,medium,inexperienced,"may struggle with ambiguous queries, rely on clarification from customers or guidance from senior team members, find it difficult to de-escalate tense situations, and may rely on predefined steps or escalate to supervisors for support","Agent: Thank you for calling BrownBox Customer Support. My name is Jane. How can I assist you today?
@@ -22919,7 +22919,7 @@ Agent: Thank you for the information, Mary. Let me check the details of your acc
 
 [Agent puts the customer on hold and checks the account details and speaker information]
 
-Agent: Thank you for waiting, Mary. I have checked your account details, and I can see that your mobile number and email ID are not verified. To change the email ID linked to your account, you need to verify your mobile number and email ID first. 
+Agent: Thank you for waiting, Mary. I have checked your account details, and I can see that your mobile number and email ID are not verified. To change the email ID linked to your account, you need to verify your mobile number and email ID first.
 
 Customer: Oh, I see. How can I verify my mobile number and email ID?
 
@@ -22931,7 +22931,7 @@ Customer: Okay, let me try that.
 
 Customer: I have verified my mobile number and email ID. What should I do next?
 
-Agent: Great, Mary. Now, you can change the email ID linked to your account. To do that, go to your account settings and click on the ""Edit"" button next to the email ID field. Enter your new email ID and click on ""Save Changes."" 
+Agent: Great, Mary. Now, you can change the email ID linked to your account. To do that, go to your account settings and click on the ""Edit"" button next to the email ID field. Enter your new email ID and click on ""Save Changes.""
 
 Customer: Okay, let me try that.
 
@@ -25033,7 +25033,7 @@ Agent: Thank you for waiting. I see that your order was delivered on 1st January
 
 Customer: Yes, that's correct.
 
-Agent: In that case, you can still claim the warranty even if you don't have the warranty card. We have your order details on file, and we can use that to verify your purchase and claim the warranty. 
+Agent: In that case, you can still claim the warranty even if you don't have the warranty card. We have your order details on file, and we can use that to verify your purchase and claim the warranty.
 
 Customer: Oh, that's great news. Can you guide me through the process?
 
@@ -25045,7 +25045,7 @@ Agent: Okay, thank you for letting me know. Have you tried any troubleshooting s
 
 Customer: No, I haven't.
 
-Agent: No problem. Let me guide you through some basic troubleshooting steps that might help resolve the issue. Please turn off the microwave oven and unplug it from the power source. Then, check if the power cord is connected securely to the back of the oven. 
+Agent: No problem. Let me guide you through some basic troubleshooting steps that might help resolve the issue. Please turn off the microwave oven and unplug it from the power source. Then, check if the power cord is connected securely to the back of the oven.
 
 Customer: Okay, I did that.
 
@@ -26743,7 +26743,7 @@ Agent: I'm sorry to hear that, let me assist you with that. Could you please pro
 
 Customer: Sure, my order number is 123456.
 
-Agent: Thank you, let me check that for you. Okay, I see that the shoes you ordered are from one of our partner brands. However, we are responsible for the installation of the shoes. 
+Agent: Thank you, let me check that for you. Okay, I see that the shoes you ordered are from one of our partner brands. However, we are responsible for the installation of the shoes.
 
 Customer: Oh, I see. So, what do I need to do to get the shoes installed?
 
@@ -26751,7 +26751,7 @@ Agent: Don't worry, I'll guide you through the process. First, could you tell me
 
 Customer: They are running shoes.
 
-Agent: Okay, great. For running shoes, the installation process is relatively simple. You just need to remove the laces, put your foot inside the shoe, and tie the laces back up. 
+Agent: Okay, great. For running shoes, the installation process is relatively simple. You just need to remove the laces, put your foot inside the shoe, and tie the laces back up.
 
 Customer: That sounds easy enough. But what if I still have trouble installing them?
 
@@ -26981,7 +26981,7 @@ Agent: I'm sorry to hear that, sir. May I know your order number, please?
 
 Customer: Sure, it's BB123456.
 
-Agent: Thank you, sir. Let me check your order information. I see that your return was received, but there seems to be a delay in processing your refund. I apologize for the inconvenience. I will escalate this issue to our refunds team, and they will contact you within 48 hours with an update. 
+Agent: Thank you, sir. Let me check your order information. I see that your return was received, but there seems to be a delay in processing your refund. I apologize for the inconvenience. I will escalate this issue to our refunds team, and they will contact you within 48 hours with an update.
 
 Customer: 48 hours? That's too long. I need my refund as soon as possible. I'm very frustrated with this situation.
 
@@ -26989,7 +26989,7 @@ Agent: I understand how you feel, sir. We will do our best to resolve this issue
 
 Customer: I used my Visa credit card.
 
-Agent: Thank you, sir. I will also check with our finance team to make sure there are no issues with the refund process. Please bear with us while we investigate this matter. 
+Agent: Thank you, sir. I will also check with our finance team to make sure there are no issues with the refund process. Please bear with us while we investigate this matter.
 
 Customer: Okay, but I hope this gets resolved soon.
 
@@ -28240,7 +28240,7 @@ Agent: Thank you, Jane. I can see that you purchased a printer from us, and I ap
 
 (Customer is put on hold for a minute)
 
-Agent: Thank you for your patience, Jane. I have checked the details, and I see that there is a mismatch between the warranty terms on the website and the physical warranty card. I'm sorry for the inconvenience caused. To ensure that you receive the correct warranty coverage, I suggest that you follow the terms mentioned on the physical warranty card that came with the printer. 
+Agent: Thank you for your patience, Jane. I have checked the details, and I see that there is a mismatch between the warranty terms on the website and the physical warranty card. I'm sorry for the inconvenience caused. To ensure that you receive the correct warranty coverage, I suggest that you follow the terms mentioned on the physical warranty card that came with the printer.
 
 Customer: Okay, that makes sense. But what about the lost warranty card? I cannot find it anywhere.
 
@@ -30703,7 +30703,7 @@ Agent: I'm sorry to hear that. To claim warranty, we need to verify that the cam
 
 Customer: I purchased the camera on June 1st of last year.
 
-Agent: Thank you. The warranty period for your camera is one year from the date of purchase. As your purchase is still within the warranty period, we can proceed with the warranty claim process. 
+Agent: Thank you. The warranty period for your camera is one year from the date of purchase. As your purchase is still within the warranty period, we can proceed with the warranty claim process.
 
 Customer: Okay, what are the steps involved?
 
@@ -30713,7 +30713,7 @@ Customer: No, I haven't. How do I do that?
 
 Agent: You can reset the camera by going to the Settings menu and selecting the ""Reset"" option. This will erase all the settings and restore the camera to its default settings. Please note that this will not delete any of your photos. Could you please try this and let me know if the issue persists?
 
-Customer: Sure, let me try that. 
+Customer: Sure, let me try that.
 
 (After a few minutes)
 
@@ -30911,7 +30911,7 @@ Agent: Thank you for providing that information. Let me check the availability o
 
 Customer: Okay, I'll hold.
 
-Agent: Thank you for waiting. I apologize for the inconvenience caused. Unfortunately, the ceiling fan is currently out of stock at your location. We are expecting a new shipment in the next two weeks. 
+Agent: Thank you for waiting. I apologize for the inconvenience caused. Unfortunately, the ceiling fan is currently out of stock at your location. We are expecting a new shipment in the next two weeks.
 
 Customer: Two weeks? That's too long. I need it urgently.
 
@@ -30919,7 +30919,7 @@ Agent: I understand your concern. However, we only have limited stock, and it's 
 
 Customer: Okay, let's check.
 
-Agent: Thank you for your patience. I see that we have the same model available for shipping at your location. You can place the order now, and it will be delivered within the next three business days. 
+Agent: Thank you for your patience. I see that we have the same model available for shipping at your location. You can place the order now, and it will be delivered within the next three business days.
 
 Customer: Okay, that's fine. But I'm disappointed that I couldn't get the ceiling fan I wanted.
 
@@ -30948,7 +30948,7 @@ Agent: I apologize for the inconvenience. I can understand how frustrating it ca
 
 Customer: I want a replacement.
 
-Agent: Sure, I can help you with that. The replacement process usually takes around 7-10 business days from the time we receive the faulty product. However, I can expedite the process for you and try to get the replacement to you as soon as possible. 
+Agent: Sure, I can help you with that. The replacement process usually takes around 7-10 business days from the time we receive the faulty product. However, I can expedite the process for you and try to get the replacement to you as soon as possible.
 
 Customer: How soon can I expect the replacement?
 
@@ -32886,7 +32886,7 @@ Agent: Thank you, John. I see your order here. Before we proceed, could you plea
 
 Customer: Yes, I did receive them, but I'm not sure if I can install it myself. I was wondering if BrownBox offers any installation service?
 
-Agent: Yes, John, we do offer installation services for washing machines, but it comes with an additional cost. However, I can assist you with some troubleshooting steps, and we can see if we can avoid the additional cost. 
+Agent: Yes, John, we do offer installation services for washing machines, but it comes with an additional cost. However, I can assist you with some troubleshooting steps, and we can see if we can avoid the additional cost.
 
 Customer: Okay, that sounds good.
 
@@ -33578,7 +33578,7 @@ Agent: Sure, I'll be happy to help. Can you please provide me with your order nu
 
 Customer: Yes, my order number is #123456789, and my email address is abc@gmail.com.
 
-Agent: Thank you for providing the details. Let me check the warranty details for you. Okay, I can see that your product is eligible for a 1-year warranty. 
+Agent: Thank you for providing the details. Let me check the warranty details for you. Okay, I can see that your product is eligible for a 1-year warranty.
 
 Customer: Okay, that's good to know. Can you also tell me what all is covered under the warranty?
 
@@ -34320,7 +34320,7 @@ Agent: Thank you for holding, John. I have checked the return policy, and I see 
 
 Customer: Sure, my bank details are as follows: Account number - 1234567890, Bank name - ABC Bank, Branch - XYZ.
 
-Agent: Thank you, John. We'll process the refund to your bank account within 5-7 business days after receiving the camera. Also, we'll reimburse the courier charges for returning the camera. Please share the courier receipt with us for the same. 
+Agent: Thank you, John. We'll process the refund to your bank account within 5-7 business days after receiving the camera. Also, we'll reimburse the courier charges for returning the camera. Please share the courier receipt with us for the same.
 
 Customer: That sounds good, Mark. I'll send you the courier receipt through email.
 
@@ -34833,7 +34833,7 @@ Customer: No, that's all. Thank you again.
 Agent: It was my pleasure, Jane. Thank you for contacting BrownBox customer support. Have a great day!"
 Warranty,Warranty Terms and Changes,Warranty mismatch between the website and the brand's website,Warranty Terms and Changes -> Warranty mismatch between the website and the brand's website,negative,Appliances,Water Purifier,less,junior,"handles customer inquiries independently, possess solid troubleshooting skills, and seek guidance from more experienced team members when needed.","Agent: Thank you for calling BrownBox Customer Support. My name is Sarah. How may I assist you today?
 
-Customer: Hi Sarah, I recently purchased a water purifier from your website, and I noticed that the warranty terms on your website do not match the ones on the brand's website. I'm not happy about this. 
+Customer: Hi Sarah, I recently purchased a water purifier from your website, and I noticed that the warranty terms on your website do not match the ones on the brand's website. I'm not happy about this.
 
 Agent: I'm sorry to hear that, let me check this for you. Can you please provide me with your order number and the brand name of the water purifier?
 
