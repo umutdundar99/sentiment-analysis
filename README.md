@@ -7,7 +7,7 @@ Sentiment Analysis library that trains GPT2 and NanoGPT transformer-based models
 
 Please create an environment, preferably a virtual environment.
 
-### Create  Virtual Environment
+### Create a Virtual Environment
 ```bash
 python -m venv .venv
 ```
