@@ -10,7 +10,8 @@
             "request": "launch",
             "module": "sentiment_analysis.__init__",
             "console": "integratedTerminal",
-            "args": ["sentiment_analysis", "nanogpt"]
+            "args": ["sentiment_analysis", "gpt2"],
+            "justMyCode": false,
 
         }
     ]
