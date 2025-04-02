@@ -1,4 +1,3 @@
-import inspect
 from typing import Dict, Tuple
 
 import torch
@@ -17,8 +16,9 @@ class GPTLightningModule(BaseModule):
         betas: Tuple[float, float],
         device_type: str,
         criterion,
+        num_classes: int,
     ):
-        super().__init__()
+        super().__init__(num_classes=num_classes)
 
         self.config = config
         self.criterion = criterion
@@ -37,21 +37,8 @@ class GPTLightningModule(BaseModule):
             {"params": decay_params, "weight_decay": self.weight_decay},
             {"params": nodecay_params, "weight_decay": 0.0},
         ]
-        num_decay_params = sum(p.numel() for p in decay_params)
-        num_nodecay_params = sum(p.numel() for p in nodecay_params)
-        print(
-            f"num decayed parameter tensors: {len(decay_params)}, with {num_decay_params:,} parameters"
-        )
-        print(
-            f"num non-decayed parameter tensors: {len(nodecay_params)}, with {num_nodecay_params:,} parameters"
-        )
-        # Create AdamW optimizer and use the fused version if it is available
-        fused_available = "fused" in inspect.signature(torch.optim.AdamW).parameters
-        use_fused = fused_available and self.device_type == "cuda"
-        extra_args = dict(fused=True) if use_fused else dict()
         optimizer = torch.optim.AdamW(
-            optim_groups, lr=self.learning_rate, betas=self.betas, **extra_args
+            optim_groups, lr=self.learning_rate, betas=self.betas
         )
-        print(f"using fused AdamW: {use_fused}")
 
         return optimizer

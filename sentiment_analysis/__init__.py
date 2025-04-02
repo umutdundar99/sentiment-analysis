@@ -33,7 +33,6 @@ def trainer(
             name=cfg.wandb.name,
             offline=cfg.wandb.offline,
             project=cfg.wandb.project,
-            experiment=cfg.wandb.experiment,
         )
         trainer(cfg, wandb_logger)
 

@@ -38,13 +38,14 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
         learning_rate=cfg.optimizer.lr,
         betas=cfg.optimizer.betas,
         device_type=cfg.trainer.device_type,
+        num_classes=cfg.dataset.num_classes,
     )
 
     callbacks = [
         # ModelCheckpoint(
         #     dirpath="checkpoints/",
-        #     filename="{epoch:02d}-{val_loss:.2f}",
-        #     monitor="val_loss",
+        #     filename="{epoch:02d}-nanogpt",
+        #     monitor="val/accuracy",
         #     mode="min",
         #     save_top_k=3,
         #     save_last=True,
@@ -53,13 +54,15 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
         LearningRateMonitor(logging_interval="step"),
         RichProgressBar(),
     ]
+
     trainer = L.Trainer(
-        # logger = logger,
+        enable_checkpointing=False,
+        logger=logger,
         max_steps=cfg.trainer.max_steps,
         precision=cfg.trainer.precision,
         accelerator=cfg.trainer.accelerator,
         callbacks=callbacks,
         accumulate_grad_batches=cfg.trainer.accumulate_grad_batches,
-        log_every_n_steps=50,
+        log_every_n_steps=1,
     )
     trainer.fit(module, datamodule)
