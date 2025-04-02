@@ -45,14 +45,21 @@ class SentimentCharDataset(Dataset):
 
 
 class SentimentGPT2Dataset(Dataset):
-    def __init__(self, csv_path: str, max_length: int = 256):
+    def __init__(self, csv_path: str, max_length: int = 256, task: str = "train"):
         self.data = pd.read_csv(csv_path)
         self.max_length = max_length
-
         self.labels = self.data["customer_sentiment"].tolist()
         self.enc = tiktoken.get_encoding("gpt2")
         self.label_map = {"negative": 0, "neutral": 1, "positive": 2}
         self.data["label"] = self.data["customer_sentiment"].map(self.label_map)
+
+        if task == "train":
+            max_sample_len = self.data["label"].value_counts().max()
+            self.data = self.data.groupby("label").apply(
+                lambda x: x.sample(max_sample_len, replace=True)
+            )
+            # shuffle
+            self.data = self.data.sample(frac=1).reset_index(drop=True)
 
     def __len__(self):
         return len(self.data)
@@ -62,7 +69,7 @@ class SentimentGPT2Dataset(Dataset):
         label = self.data.iloc[idx]["label"]
         token_ids = self.enc.encode_ordinary(conversation)
         if len(token_ids) > self.max_length:
-            token_ids = token_ids[: self.max_length]
+            token_ids = token_ids[len(token_ids) - self.max_length :]
         else:
             token_ids += [0] * (self.max_length - len(token_ids))
         input_tensor = torch.tensor(token_ids, dtype=torch.long)
@@ -106,13 +113,19 @@ class SentimentAnalysisDataModule(L.LightningDataModule):
             )
         else:
             self.train = SentimentGPT2Dataset(
-                os.path.join(self.data_dir, "train.csv"), max_length
+                os.path.join(self.data_dir, "train.csv"),
+                max_length,
+                task="train",
             )
             self.val = SentimentGPT2Dataset(
-                os.path.join(self.data_dir, "val.csv"), max_length
+                os.path.join(self.data_dir, "val.csv"),
+                max_length,
+                task="val",
             )
             self.test = SentimentGPT2Dataset(
-                os.path.join(self.data_dir, "test.csv"), max_length
+                os.path.join(self.data_dir, "test.csv"),
+                max_length,
+                task="test",
             )
 
     def train_dataloader(self):
