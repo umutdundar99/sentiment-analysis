@@ -36,6 +36,11 @@ To investigate the data distribution and characteristics, please see the [data_a
 
 ### Pre-processing
 Before the training, you must run [process](sentiment_analysis/data/process.py) file to preprocess the data and save it to [sentiment_analysis/data/processed] folder
+
+```bash
+python3.10 sentiment_analysis/data/process.py 
+```
+
 The pre-processing step includes 
 - Convert all text to lowercase.
 - Remove speaker turns starting with "agent".
