@@ -47,7 +47,7 @@ The pre-processing step includes
 - Remove all non-alphanumeric characters and punctuation.
 - Replace multiple whitespaces with a single space.
 - Remove the word "customer" from the conversation.
-- Filter out conversations with extremely long lengths (top 5%).
+- Filter out conversations with highly long lengths (top 5%).
 - Drop empty conversations or rows with missing values.
 - Create a validation split with class balance.
 
@@ -62,7 +62,7 @@ sentiment_analysis sentiment nanogpt
 GPT-2 on sentiment data with pre-trained weights
 
 ```bash
-sentiment_analysis sentiment nanogpt
+sentiment_analysis sentiment gpt2
 ```
 
 The former argument is the dataset name, or the task, the latter is the model name
