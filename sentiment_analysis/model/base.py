@@ -3,7 +3,6 @@ from typing import Any, Optional
 import lightning as L
 import torch
 import torchmetrics
-import wandb
 from torchmetrics.classification import (
     ConfusionMatrix,
     MulticlassAccuracy,
@@ -11,6 +10,8 @@ from torchmetrics.classification import (
     MulticlassPrecision,
     MulticlassRecall,
 )
+
+import wandb
 
 
 class BaseModule(L.LightningModule):
@@ -28,11 +29,16 @@ class BaseModule(L.LightningModule):
 
         self.train_metrics = torchmetrics.MetricCollection(metrics, prefix="train/")
         self.val_metrics = torchmetrics.MetricCollection(metrics, prefix="val/")
+        self.test_metrics = torchmetrics.MetricCollection(metrics, prefix="test/")
 
         self.train_confmat = ConfusionMatrix(
             task="multiclass", num_classes=self.num_classes
         )
         self.val_confmat = ConfusionMatrix(
+            task="multiclass", num_classes=self.num_classes
+        )
+
+        self.test_confmat = ConfusionMatrix(
             task="multiclass", num_classes=self.num_classes
         )
 
@@ -69,9 +75,6 @@ class BaseModule(L.LightningModule):
 
         preds = torch.argmax(logits, dim=1)
         self.val_metrics.update(preds, y)
-        print(f"preds: {preds}")
-        print(f"groun: {y}")
-        print(f"Epoch: {self.current_epoch} ---------------------------------------")
         self.val_confmat.update(preds, y)
 
         self.log("loss/val", loss, on_step=False, on_epoch=True, prog_bar=True)
@@ -103,6 +106,32 @@ class BaseModule(L.LightningModule):
         self.val_metrics.reset()
         self.val_confmat.reset()
 
-    # def configure_optimizers(self) -> torch.optim.Optimizer:
-    #     optimizer = torch.optim.AdamW(self.parameters(), lr=1e-4)
-    #     return optimizer
+    def test_step(self, batch: Any, batch_idx: int) -> torch.Tensor:
+        x, y = batch
+        logits = self.model(x)
+
+        preds = torch.argmax(logits, dim=1)
+        self.test_metrics.update(preds, y)
+        self.test_confmat.update(preds, y)
+
+    def on_test_epoch_end(self):
+        test_results = self.test_metrics.compute()
+        self.log_dict(test_results, prog_bar=True)
+
+        confmat = self.test_confmat.compute()
+        per_class_acc = confmat.diag() / confmat.sum(dim=1)
+
+        for i, acc in enumerate(per_class_acc):
+            self.log(f"test/acc_{self.class_labels[i]}", acc, prog_bar=True)
+
+        confmat_table = wandb.Table(
+            columns=["Predicted"] + self.class_labels,
+            data=[
+                [self.class_labels[i]] + confmat[i].tolist()
+                for i in range(self.num_classes)
+            ],
+        )
+        self.logger.experiment.log({"test/confusion_matrix": confmat_table})
+
+        self.test_metrics.reset()
+        self.test_confmat.reset()

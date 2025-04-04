@@ -14,16 +14,18 @@ cli = typer.Typer(pretty_exceptions_enable=False, rich_markup_mode="markdown")
 
 @cli.command()
 def trainer(
-    task: str = typer.Argument(..., help="The task to perform, e.g. 'sentiment'"),
+    task: str = typer.Argument(..., help="The task to perform, e.g. 'train' or 'test'"),
     model: str = typer.Argument(..., help="The model to use, e.g. 'gpt2' or 'nanogpt'"),
 ):
-    if model == "gpt2":
-        trainer = train_gpt2
-        cfg_path = "gpt2.yaml"
-    elif model == "nanogpt":
-        trainer = train_nanogpt
-        cfg_path = "nanogpt.yaml"
-
+    if task == "train":
+        if model == "gpt2":
+            module = train_gpt2
+            cfg_path = "gpt2.yaml"
+        elif model == "nanogpt":
+            module = train_nanogpt
+            cfg_path = "nanogpt.yaml"
+        else:
+            raise ValueError("Probably not implemented yet :)")
     else:
         raise ValueError("Probably not implemented yet :)")
 
@@ -34,7 +36,7 @@ def trainer(
             offline=cfg.wandb.offline,
             project=cfg.wandb.project,
         )
-        trainer(cfg, wandb_logger)
+        module(cfg, wandb_logger)
 
 
 if __name__ == "__main__":
