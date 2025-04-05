@@ -1,9 +1,9 @@
 # Sentiment Analysis
 
-Sentiment Analysis library that trains GPT2 and NanoGPT transformer-based models on the dataset, including text conversations about customer sentiment with the customer service agent.  
+Sentiment Analysis library that trains GPT2 and NanoGPT transformer-based models on the dataset, including text conversations about customer sentiment with the customer service agent.
 
-:information_source: To see explanatory data analysis, please [Go to Data Analysis](##data-analysis). Necessarcy comments are done at the end of the notebook.  
-:information_source: The test dataset evaluation is done just after the training      
+:information_source: To see explanatory data analysis, please [Go to Data Analysis](##data-analysis). Necessarcy comments are done at the end of the notebook.
+:information_source: The test dataset evaluation is done just after the training
 
 
 
@@ -46,7 +46,7 @@ Before the training, you must run [process](sentiment_analysis/data/process.py) 
 python3.10 sentiment_analysis/data/process.py
 ```
 
-The pre-processing step includes 
+The pre-processing step includes
 - Convert all text to lowercase.
 - Remove speaker turns starting with "agent".
 - Remove all non-alphanumeric characters and punctuation.
