@@ -2,10 +2,8 @@
 
 Sentiment Analysis library that trains GPT2 and NanoGPT transformer-based models on the dataset, including text conversations about customer sentiment with the customer service agent.
 
-:information_source: To see explanatory data analysis, please [Go to Data Analysis](##data-analysis). Necessarcy comments are done at the end of the notebook.
-:information_source: The test dataset evaluation is done just after the training
-
-
+ℹ️ To see explanatory data analysis, please go to [Data Analysis](#data-analysis). The necessary comments on the data are provided at the end of the notebook.  
+ℹ️ The test dataset evaluation is done just after the training
 
 
 ## Installation
@@ -21,7 +19,7 @@ python -m venv .venv
 #### Windows
 
 ```bash
-venv\Scripts\activate
+source venv\Scripts\activate
 ```
 
 #### Ubuntu
@@ -40,7 +38,7 @@ pip install -e .
 To investigate the data distribution and characteristics, please see the [data_analysis](sentiment_analysis/data_analysis.ipynb) file and execute every cell one by one
 
 ### Pre-processing
-Before the training, you must run [process](sentiment_analysis/data/process.py) file to preprocess the data and save it to [processed](sentiment_analysis/data/processed) folder
+Before the training, you must run the [process](sentiment_analysis/data/process.py) file to preprocess the data and save it to the [processed](sentiment_analysis/data/processed) folder
 
 ```bash
 python3.10 sentiment_analysis/data/process.py
@@ -52,7 +50,7 @@ The pre-processing step includes
 - Remove all non-alphanumeric characters and punctuation.
 - Replace multiple whitespaces with a single space.
 - Remove the word "customer" from the conversation.
-- Filter out conversations with highly long lengths (top 5%).
+- Filter out conversations with extremely long lengths (top 5%).
 - Drop empty conversations or rows with missing values.
 - Create a validation split with class balance.
 
@@ -72,7 +70,7 @@ GPT-2 on sentiment data with pre-trained weights
 sentiment_analysis sentiment gpt2
 ```
 
-:information_source: Please note that the former argument is the task, the latter is the model name
+ℹ️ Please note that the former argument is the task, the latter is the model name
 
 
 ## Contributing
