@@ -38,7 +38,6 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
         weight_decay=cfg.optimizer.weight_decay,
         learning_rate=cfg.optimizer.lr,
         betas=cfg.optimizer.betas,
-        device_type=cfg.trainer.device_type,
         num_classes=cfg.dataset.num_classes,
     )
 

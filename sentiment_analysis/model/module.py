@@ -14,7 +14,6 @@ class GPTLightningModule(BaseModule):
         weight_decay: float,
         learning_rate: float,
         betas: Tuple[float, float],
-        device_type: str,
         criterion,
         num_classes: int,
     ):
@@ -26,9 +25,14 @@ class GPTLightningModule(BaseModule):
         self.weight_decay = weight_decay
         self.learning_rate = learning_rate
         self.betas = betas
-        self.device_type = device_type
 
-    def configure_optimizers(self):
+    def configure_optimizers(self) -> torch.optim.Optimizer:
+        """
+        Configure the optimizer for the model.
+
+        Returns:
+            torch.optim.Optimizer: The optimizer for the model.
+        """
         param_dict = {pn: p for pn, p in self.named_parameters()}
         param_dict = {pn: p for pn, p in param_dict.items() if p.requires_grad}
         decay_params = [p for n, p in param_dict.items() if p.dim() >= 2]

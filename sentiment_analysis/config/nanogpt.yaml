@@ -29,4 +29,3 @@ trainer:
   precision: 16
   accelerator: auto
   accumulate_grad_batches: 1
-  device_type: cuda
