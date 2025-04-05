@@ -56,10 +56,10 @@ def process_data(
         data_positive = data[data["customer_sentiment"] == "positive"]
         data_others = data[data["customer_sentiment"] != "positive"]
         val_data_positive = data_positive.sample(
-            max(4, int(len(data_positive) * val_split)), random_state=42, replace=False
+            max(1, int(len(data_positive) * val_split)), random_state=42, replace=False
         )
         val_data_others = data_others.sample(
-            max(4, int(len(data_others) * val_split)), random_state=42, replace=False
+            max(1, int(len(data_others) * val_split)), random_state=42, replace=False
         )
         val_data = pd.concat([val_data_positive, val_data_others])
         train_data = data.drop(val_data.index)
@@ -74,7 +74,6 @@ def process_data(
         data.to_csv(
             os.path.join(os.path.dirname(__file__), "processed", name), index=False
         )
-
     return data
 
 

@@ -1,6 +1,7 @@
 import lightning as L
 from lightning.pytorch.callbacks import (
     LearningRateMonitor,
+    ModelCheckpoint,
     RichProgressBar,
 )
 from lightning.pytorch.loggers import WandbLogger
@@ -10,7 +11,7 @@ from sentiment_analysis.data.loader import SentimentAnalysisDataModule
 from sentiment_analysis.model.config import nanoGPTConfig
 from sentiment_analysis.model.module import GPTLightningModule
 from sentiment_analysis.model.nn.gpt import GPT
-from sentiment_analysis.utils.loss import CrossEntropyLoss
+from sentiment_analysis.utils.loss import FocalLoss
 
 
 def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
@@ -29,7 +30,7 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
         if cfg.dataset.encode_type == "char"
         else None,
     )
-    criterion = CrossEntropyLoss()
+    criterion = FocalLoss()
     module = GPTLightningModule(
         model=model,
         config=model_config,
@@ -42,27 +43,28 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
     )
 
     callbacks = [
-        # ModelCheckpoint(
-        #     dirpath="checkpoints/",
-        #     filename="{epoch:02d}-nanogpt",
-        #     monitor="val/accuracy",
-        #     mode="min",
-        #     save_top_k=3,
-        #     save_last=True,
-        #     verbose=True,
-        # ),
+        ModelCheckpoint(
+            dirpath="checkpoints/",
+            filename="{epoch:02d}-nanogpt",
+            monitor="val/accuracy",
+            mode="max",
+            save_top_k=3,
+            save_last=True,
+            verbose=True,
+        ),
         LearningRateMonitor(logging_interval="step"),
         RichProgressBar(),
     ]
 
     trainer = L.Trainer(
-        enable_checkpointing=False,
         logger=logger,
-        max_steps=cfg.trainer.max_steps,
+        max_epochs=cfg.trainer.max_epochs,
         precision=cfg.trainer.precision,
         accelerator=cfg.trainer.accelerator,
         callbacks=callbacks,
         accumulate_grad_batches=cfg.trainer.accumulate_grad_batches,
         log_every_n_steps=1,
+        deterministic=True,
     )
     trainer.fit(module, datamodule)
+    trainer.test(module, datamodule, ckpt_path="last")

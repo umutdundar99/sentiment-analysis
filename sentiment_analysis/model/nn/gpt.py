@@ -32,6 +32,7 @@ class GPT(nn.Module):
             )
         )
 
+        # The Modified part of GPT: Classification head
         self.classifier_head = nn.Sequential(
             nn.Linear(config.n_embd, config.n_embd // 2),
             nn.ReLU(),
@@ -82,7 +83,7 @@ class GPT(nn.Module):
 
         pooled_x = x[:, -1, :]  # (b, n_embd)
 
-        # Classification logits
+        # The Modified part of GPT: Classification head
         logits = self.classifier_head(pooled_x)  # (b, num_classes)
 
         return logits
@@ -142,6 +143,8 @@ class GPT(nn.Module):
             "mlp.c_proj.weight",
         ]
 
+        # Modified part: remove classifier_head and lm_head
+        # from the state dict keys
         sd_keys = [k for k in sd_keys if not k.startswith("classifier_head")]
         sd_keys_hf = [k for k in sd_keys_hf if not k.startswith("lm_head")]
         assert len(sd_keys_hf) == len(

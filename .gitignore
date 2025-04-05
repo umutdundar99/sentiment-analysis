@@ -181,3 +181,4 @@ lightning_logs
 
 # wandb
 wandb
+checkpoints

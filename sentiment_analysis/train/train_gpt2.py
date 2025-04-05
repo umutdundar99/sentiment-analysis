@@ -1,6 +1,7 @@
 import lightning as L
 from lightning.pytorch.callbacks import (
     LearningRateMonitor,
+    ModelCheckpoint,
     RichProgressBar,
 )
 from lightning.pytorch.loggers import WandbLogger
@@ -41,28 +42,29 @@ def train_gpt2(cfg: DictConfig, logger: WandbLogger):
     )
 
     callbacks = [
-        # ModelCheckpoint(
-        #     dirpath="checkpoints/",
-        #     filename="{epoch:02d}-gpt2",
-        #     monitor="val/accuracy",
-        #     mode="min",
-        #     save_top_k=3,
-        #     save_last=True,
-        #     verbose=True,
-        # ),
+        ModelCheckpoint(
+            dirpath="checkpoints/",
+            filename="{epoch:02d}-gpt2",
+            monitor="val/accuracy",
+            mode="max",
+            save_top_k=3,
+            save_last=True,
+            verbose=True,
+        ),
         LearningRateMonitor(logging_interval="step"),
         RichProgressBar(),
     ]
 
     trainer = L.Trainer(
-        enable_checkpointing=False,
         logger=logger,
-        max_steps=cfg.trainer.max_steps,
+        max_epochs=cfg.trainer.max_epochs,
         precision=cfg.trainer.precision,
         accelerator=cfg.trainer.accelerator,
         callbacks=callbacks,
         accumulate_grad_batches=cfg.trainer.accumulate_grad_batches,
         log_every_n_steps=1,
         gradient_clip_val=1.0,
+        deterministic=True,
     )
     trainer.fit(module, datamodule)
+    trainer.test(module, datamodule, ckpt_path="last")
