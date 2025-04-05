@@ -64,7 +64,7 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
         callbacks=callbacks,
         accumulate_grad_batches=cfg.trainer.accumulate_grad_batches,
         log_every_n_steps=1,
-        deterministic=True
+        deterministic=True,
     )
     trainer.fit(module, datamodule)
     trainer.test(module, datamodule, ckpt_path="last")
