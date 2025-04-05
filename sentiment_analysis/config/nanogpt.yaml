@@ -1,11 +1,12 @@
 wandb:
-  name: nanogpt-sentiment-16batch-1e3
+  name: nanogpt-sentiment-32batch-1e3
   offline: False
   project: sentiment_analysis
 
+
 dataset:
   dir: /home/umutdundar/Desktop/repositories/sentiment-analysis/sentiment_analysis/data/processed
-  batch_size: 16
+  batch_size: 32
   max_length: 512
   num_workers: 12
   num_classes: 3
@@ -20,11 +21,11 @@ optimizer:
     name: Adam
     lr: 1e-3
     betas: [0.9, 0.95]
-    weight_decay: 0.01
+    weight_decay: 0.001
 
 
 trainer:
-  max_epochs: 10
+  max_epochs: 30
   precision: 16
   accelerator: auto
   accumulate_grad_batches: 1

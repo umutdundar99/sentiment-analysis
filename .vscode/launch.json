@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "sentiment_analysis.__init__",
             "console": "integratedTerminal",
-            "args": ["test","gpt2"],
+            "args": ["train","gpt2"],
             "justMyCode": false,
 
         }

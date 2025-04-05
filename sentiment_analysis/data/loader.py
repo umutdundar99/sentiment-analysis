@@ -138,7 +138,7 @@ class SentimentAnalysisDataModule(L.LightningDataModule):
         return DataLoader(
             self.train,
             batch_size=self.batch_size,
-            #pin_memory=True,
+            # pin_memory=True,
             num_workers=12,
             shuffle=True,
         )
@@ -153,7 +153,7 @@ class SentimentAnalysisDataModule(L.LightningDataModule):
         return DataLoader(
             self.val,
             batch_size=self.batch_size,
-            #pin_memory=True,
+            # pin_memory=True,
             num_workers=12,
             shuffle=False,
         )
@@ -168,7 +168,7 @@ class SentimentAnalysisDataModule(L.LightningDataModule):
         return DataLoader(
             self.test,
             batch_size=self.batch_size,
-            #pin_memory=True,
+            # pin_memory=True,
             num_workers=12,
             shuffle=False,
         )

@@ -64,6 +64,7 @@ def train_gpt2(cfg: DictConfig, logger: WandbLogger):
         accumulate_grad_batches=cfg.trainer.accumulate_grad_batches,
         log_every_n_steps=1,
         gradient_clip_val=1.0,
+        deterministic=True,
     )
     trainer.fit(module, datamodule)
     trainer.test(module, datamodule, ckpt_path="last")
