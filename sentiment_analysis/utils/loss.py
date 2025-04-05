@@ -19,9 +19,9 @@ class FocalLoss(nn.Module):
         self.reduction = reduction
 
     def forward(self, logits, y):
-        BCE_loss = nn.CrossEntropyLoss(reduction="none")(logits, y)
-        pt = torch.exp(-BCE_loss)
-        F_loss = self.alpha * (1 - pt) ** self.gamma * BCE_loss
+        CE_loss = nn.CrossEntropyLoss(reduction="none")(logits, y)
+        pt = torch.exp(-CE_loss)
+        F_loss = self.alpha * (1 - pt) ** self.gamma * CE_loss
 
         if self.reduction == "mean":
             return F_loss.mean()
