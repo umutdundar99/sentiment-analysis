@@ -46,7 +46,7 @@ def train_gpt2(cfg: DictConfig, logger: WandbLogger):
             dirpath="checkpoints/",
             filename="{epoch:02d}-gpt2",
             monitor="val/accuracy",
-            mode="min",
+            mode="max",
             save_top_k=3,
             save_last=True,
             verbose=True,

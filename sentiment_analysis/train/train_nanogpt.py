@@ -47,7 +47,7 @@ def train_nanogpt(cfg: DictConfig, logger: WandbLogger):
             dirpath="checkpoints/",
             filename="{epoch:02d}-nanogpt",
             monitor="val/accuracy",
-            mode="min",
+            mode="max",
             save_top_k=3,
             save_last=True,
             verbose=True,
