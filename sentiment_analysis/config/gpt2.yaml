@@ -5,7 +5,7 @@ wandb:
 
 
 dataset:
-  dir: /home/umutdundar/Desktop/repositories/sentiment-analysis/sentiment_analysis/data/processed
+  dir: sentiment_analysis/data/processed
   batch_size: 16
   max_length: 1024
   num_workers: 12
