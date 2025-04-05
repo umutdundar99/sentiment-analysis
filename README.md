@@ -40,12 +40,21 @@ pip install -e .
 To investigate the data distribution and characteristics, please see the [data_analysis](sentiment_analysis/data_analysis.ipynb) file and execute every cell one by one
 
 ### Pre-processing
-Before the training, you must run [process](sentiment_analysis/data/process.py) file to preprocess the data and save it to [sentiment_analysis/data/processed] folder
+Before the training, you must run [process](sentiment_analysis/data/process.py) file to preprocess the data and save it to [processed](sentiment_analysis/data/processed) folder
 
 ```bash
 python3.10 sentiment_analysis/data/process.py
 ```
 
+The pre-processing step includes 
+- Convert all text to lowercase.
+- Remove speaker turns starting with "agent".
+- Remove all non-alphanumeric characters and punctuation.
+- Replace multiple whitespaces with a single space.
+- Remove the word "customer" from the conversation.
+- Filter out conversations with highly long lengths (top 5%).
+- Drop empty conversations or rows with missing values.
+- Create a validation split with class balance.
 
 ### Training
 
