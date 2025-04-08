@@ -61,13 +61,13 @@ GPT model can be found at [GPT](sentiment_analysis/model/nn/gpt.py). The only mo
 - Please run the following script to train NanoGPT on sentiment data from scratch
 
 ```bash
-sentiment_analysis sentiment nanogpt
+sentiment_analysis train nanogpt
 ```
 
 GPT-2 on sentiment data with pre-trained weights
 
 ```bash
-sentiment_analysis sentiment gpt2
+sentiment_analysis train gpt2
 ```
 
 ℹ️ Please note that the former argument is the task, the latter is the model name
