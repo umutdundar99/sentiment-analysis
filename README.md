@@ -2,8 +2,8 @@
 
 Sentiment Analysis library that trains GPT2 and NanoGPT transformer-based models on the dataset, including text conversations about customer sentiment with the customer service agent.
 
-ℹ️ To see explanatory data analysis, please go to [Data Analysis](#data-analysis). The necessary comments on the data are provided at the end of the notebook.  
-ℹ️ The test dataset evaluation is done just after the training
+:green_circle: To see explanatory data analysis, please go to [Data Analysis](#data-analysis). The necessary comments on the data are provided at the end of the notebook.
+:green_circle: The test dataset evaluation is done just after the training
 
 
 ## Installation
@@ -75,7 +75,7 @@ sentiment_analysis train gpt2
 
 ## Contributing
 
-Pull requests are not welcome
+Pull requests are not welcome :interrobang:
 
 ## License
 
